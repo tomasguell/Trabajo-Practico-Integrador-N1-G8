@@ -3,7 +3,7 @@ Trabajo de base de datos N1
 
 CONSIGNA:
 
-Caso 8: Alquiler de películas
+# Caso 8: Alquiler de películas
 La cadena de tiendas de alquiler de películas, VideoExpress, desea implementar un sistema
 de gestión de sus tiendas y sus clientes. Cada tienda cuenta con un catálogo de películas
 disponibles para alquilar, y cada cliente puede rentar varias películas a la vez.
