@@ -251,3 +251,28 @@ VALUES (4, 4);
 
 INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
 VALUES (4, 5);
+
+
+
+SELECT Peliculas.titulo, Directores.nombre, Generos.tipoGenero, Tiendas_Peliculas.numeroCopias 
+FROM Peliculas 
+INNER JOIN Directores ON Peliculas.director = Directores.id 
+INNER JOIN Generos ON Peliculas.genero = Generos.id 
+INNER JOIN Tiendas_Peliculas ON Peliculas.id_pelicula = Tiendas_Peliculas.id_pelicula 
+WHERE Peliculas.titulo LIKE '%El Padrino%' OR Directores.nombre LIKE '%nombre_director_buscado%' OR Generos.tipoGenero LIKE '%genero_buscado%' AND Tiendas_Peliculas.numeroCopias > 0;
+
+
+SELECT Peliculas.titulo
+FROM Peliculas
+INNER JOIN Tiendas_Peliculas ON Peliculas.id_pelicula = Tiendas_Peliculas.id_pelicula
+WHERE Tiendas_Peliculas.id_tienda = 1 AND Tiendas_Peliculas.numeroCopias > 0;
+
+
+SELECT Tiendas_Peliculas.id_tienda, Peliculas.titulo, detalles.id_tiendaPelicula, Alquileres.fecha_inicio
+FROM Tiendas_Peliculas
+INNER JOIN detalles ON Tiendas_Peliculas.id = detalles.id_tiendaPelicula
+INNER JOIN Alquileres ON detalles.id_alquiler = Alquileres.id
+INNER JOIN Peliculas ON Tiendas_Peliculas.id_pelicula = Peliculas.id_pelicula
+WHERE Alquileres.estado_devolucion = 0;
+
+
