@@ -184,6 +184,20 @@ INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (1, 
 INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (2, 3, 1);
 INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (2, 5, 8);
 
+INSERT INTO Clientes (nombre, direccion, telefono, email, tarjeta)
+VALUES ('Juan Perez', 'Calle 1, Ciudad de Mexico', '55-1234-5678', 'juanperez@mail.com', 1);
+
+INSERT INTO Clientes (nombre, direccion, telefono, email, tarjeta)
+VALUES ('Maria Garcia', 'Avenida 2, Guadalajara', '33-9876-5432', 'mariagarcia@mail.com', 2);
+
+INSERT INTO Clientes (nombre, direccion, telefono, email, tarjeta)
+VALUES ('Pedro Rodriguez', 'Calle 3, Monterrey', '81-2468-1357', 'pedrorodriguez@mail.com', 3);
+
+INSERT INTO Clientes (nombre, direccion, telefono, email, tarjeta)
+VALUES ('Ana Martinez', 'Avenida 4, Puebla', '222-7654-321', 'anamartinez@mail.com', 4);
+
+INSERT INTO Clientes (nombre, direccion, telefono, email, tarjeta)
+VALUES ('Luisa Gutierrez', 'Calle 5, Tijuana', '664-1597-326', 'luisagutierrez@mail.com', 5);
 
 INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
 VALUES (1, '2023-03-29', 3, 0);
