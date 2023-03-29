@@ -99,7 +99,7 @@ CREATE TABLE Alquileres (
   duracion INTEGER,
 
   estado_devolucion INTEGER,
-  FOREIGN KEY (id_cliente) REFERENCES Clientes (id_cliente)
+  CONSTRAINT FOREIGN KEY (id_cliente) REFERENCES Clientes (id_cliente)
   
   
 );
@@ -109,8 +109,131 @@ CREATE TABLE detalles(
   id_alquiler INTEGER,
   id_tiendaPelicula INTEGER ,
   
-  FOREIGN KEY (id_alquiler) REFERENCES Alquileres (id),
-  FOREIGN KEY (id_tiendaPelicula) REFERENCES Tiendas_Peliculas (id)
+  CONSTRAINT FOREIGN KEY (id_alquiler) REFERENCES Alquileres (id),
+  CONSTRAINT FOREIGN KEY (id_tiendaPelicula) REFERENCES Tiendas_Peliculas (id)
 );
 
 
+INSERT INTO TipoTarjeta (tipoTarjeta) VALUES ('Visa');
+INSERT INTO TipoTarjeta (tipoTarjeta) VALUES ('Mastercard');
+INSERT INTO TipoTarjeta (tipoTarjeta) VALUES ('American Express');
+INSERT INTO TipoTarjeta (tipoTarjeta) VALUES ('Discover');
+INSERT INTO TipoTarjeta (tipoTarjeta) VALUES ('Diners Club');
+
+INSERT INTO Tarjetas (banco, numeroTarjeta, FechaExpiracion, email, tipoTarjeta)
+VALUES ('BBVA', 1234567, 1231, 'cliente1@correo.com', 1);
+
+INSERT INTO Tarjetas (banco, numeroTarjeta, FechaExpiracion, email, tipoTarjeta)
+VALUES ('Santander', 23456, 1231, 'cliente2@correo.com', 2);
+
+INSERT INTO Tarjetas (banco, numeroTarjeta, FechaExpiracion, email, tipoTarjeta)
+VALUES ('Bancomer', 3456789, 1231, 'cliente3@correo.com', 3);
+
+INSERT INTO Tarjetas (banco, numeroTarjeta, FechaExpiracion, email, tipoTarjeta)
+VALUES ('HSBC', 456789, 1231, 'cliente4@correo.com', 4);
+
+INSERT INTO Tarjetas (banco, numeroTarjeta, FechaExpiracion, email, tipoTarjeta)
+VALUES ('HSBC', 456789, 1231, 'cliente5@correo.com', 5);
+
+INSERT INTO Generos (tipoGenero) VALUES ('Acción');
+INSERT INTO Generos (tipoGenero) VALUES ('Comedia');
+INSERT INTO Generos (tipoGenero) VALUES ('Drama');
+INSERT INTO Generos (tipoGenero) VALUES ('Terror');
+INSERT INTO Generos (tipoGenero) VALUES ('Romance');
+
+INSERT INTO Directores (nombre) VALUES ('Steven Spielberg');
+INSERT INTO Directores (nombre) VALUES ('Christopher Nolan');
+INSERT INTO Directores (nombre) VALUES ('Quentin Tarantino');
+INSERT INTO Directores (nombre) VALUES ('Martin Scorsese');
+INSERT INTO Directores (nombre) VALUES ('Alfonso Cuarón');
+
+INSERT INTO ClasificacionEdades (tipoClasificacion) VALUES ('A');
+INSERT INTO ClasificacionEdades (tipoClasificacion) VALUES ('AA');
+INSERT INTO ClasificacionEdades (tipoClasificacion) VALUES ('B');
+INSERT INTO ClasificacionEdades (tipoClasificacion) VALUES ('B15');
+INSERT INTO ClasificacionEdades (tipoClasificacion) VALUES ('C');
+
+
+INSERT INTO Peliculas (id_pelicula, titulo, director, genero, descripcion, clasificacion_edad, duracion, precio_renta)
+VALUES (1, 'El Padrino', 4, 3, 'La historia de la familia Corleone', 4, 175, 2.99);
+
+INSERT INTO Peliculas (id_pelicula, titulo, director, genero, descripcion, clasificacion_edad, duracion, precio_renta)
+VALUES (2, 'La La Land', 5, 5, 'Una historia de amor en Hollywood', 1, 128, 1.99);
+
+INSERT INTO Peliculas (id_pelicula, titulo, director, genero, descripcion, clasificacion_edad, duracion, precio_renta)
+VALUES (3, 'El Gran Hotel Budapest', 1, 2, 'Las aventuras de Gustave H. y Zero Moustafa', 2, 99, 1.49);
+
+INSERT INTO Peliculas (id_pelicula, titulo, director, genero, descripcion, clasificacion_edad, duracion, precio_renta)
+VALUES (4, 'The Dark Knight', 2, 1, 'El Caballero de la Noche lucha contra el Joker', 4, 152, 2.49);
+
+INSERT INTO Peliculas (id_pelicula, titulo, director, genero, descripcion, clasificacion_edad, duracion, precio_renta)
+VALUES (5, 'Parasite', 3, 3, 'Una familia pobre se infiltra en una casa rica', 2, 132, 2.99);
+
+INSERT INTO Tiendas (nombre, direccion, telefono, email)
+VALUES ('Blockbuster', 'Av. Insurgentes Sur 1520, Col. Actipan', '555-1234', 'ventas@blockbuster.com');
+
+INSERT INTO Tiendas (nombre, direccion, telefono, email)
+VALUES ('Cinepolis', 'Plaza Satélite, Blvd. Manuel Ávila Camacho', '555-5678', 'contacto@cinepolis.com');
+
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (1, 1, 5);
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (1, 2, 10);
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (1, 3, 3);
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (2, 1, 2);
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (2, 4, 7);
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (1, 2, 4);
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (2, 3, 1);
+INSERT INTO Tiendas_Peliculas (id_tienda, id_pelicula, numeroCopias) VALUES (2, 5, 8);
+
+
+INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
+VALUES (1, '2023-03-29', 3, 0);
+
+INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
+VALUES (2, '2023-03-29', 5, 0);
+
+INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
+VALUES (3, '2023-03-29', 2, 0);
+
+INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
+VALUES (4, '2023-03-29', 4, 0);
+
+
+-- Detalles del alquiler 1
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (1, 1);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (1, 2);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (1, 3);
+
+-- Detalles del alquiler 2
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (2, 2);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (2, 3);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (2, 4);
+
+-- Detalles del alquiler 3
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (3, 5);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (3, 6);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (3, 7);
+
+-- Detalles del alquiler 4
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (4, 3);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (4, 4);
+
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
+VALUES (4, 5);
