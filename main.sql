@@ -96,7 +96,7 @@ CREATE TABLE Alquileres (
   id_cliente INTEGER,
 
   fecha_inicio DATE,
-  duracion INTEGER,
+  fecha_finalizacion DATE,
 
   estado_devolucion INTEGER,
   CONSTRAINT FOREIGN KEY (id_cliente) REFERENCES Clientes (id_cliente)
@@ -108,6 +108,8 @@ CREATE TABLE Alquileres (
 CREATE TABLE detalles(
   id_alquiler INTEGER,
   id_tiendaPelicula INTEGER ,
+
+  copiasPelicula INTEGER,
   
   CONSTRAINT FOREIGN KEY (id_alquiler) REFERENCES Alquileres (id),
   CONSTRAINT FOREIGN KEY (id_tiendaPelicula) REFERENCES Tiendas_Peliculas (id)
@@ -199,58 +201,58 @@ VALUES ('Ana Martinez', 'Avenida 4, Puebla', '222-7654-321', 'anamartinez@mail.c
 INSERT INTO Clientes (nombre, direccion, telefono, email, tarjeta)
 VALUES ('Luisa Gutierrez', 'Calle 5, Tijuana', '664-1597-326', 'luisagutierrez@mail.com', 5);
 
-INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
-VALUES (1, '2023-03-29', 3, 0);
+INSERT INTO Alquileres (id_cliente, fecha_inicio, fecha_finalizacion, estado_devolucion)
+VALUES (1, '2023-03-29', '2023-04-7', 0);
 
-INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
-VALUES (2, '2023-03-29', 5, 0);
+INSERT INTO Alquileres (id_cliente, fecha_inicio, fecha_finalizacion, estado_devolucion)
+VALUES (2, '2023-03-29', '2023-04-7', 0);
 
-INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
-VALUES (3, '2023-03-29', 2, 0);
+INSERT INTO Alquileres (id_cliente, fecha_inicio, fecha_finalizacion, estado_devolucion)
+VALUES (3, '2023-03-29', '2023-04-7', 0);
 
-INSERT INTO Alquileres (id_cliente, fecha_inicio, duracion, estado_devolucion)
-VALUES (4, '2023-03-29', 4, 0);
+INSERT INTO Alquileres (id_cliente, fecha_inicio, fecha_finalizacion, estado_devolucion)
+VALUES (4, '2023-03-29', '2023-04-7', 0);
 
 
 -- Detalles del alquiler 1
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (1, 1);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (1, 1, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (1, 2);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (1, 2, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (1, 3);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (1, 3, 3);
 
 -- Detalles del alquiler 2
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (2, 2);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (2, 2, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (2, 3);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (2, 3, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (2, 4);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (2, 4, 3);
 
 -- Detalles del alquiler 3
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (3, 5);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (3, 5, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (3, 6);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (3, 6, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (3, 7);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (3, 7, 3);
 
 -- Detalles del alquiler 4
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (4, 3);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (4, 3, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (4, 4);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (4, 4, 3);
 
-INSERT INTO detalles (id_alquiler, id_tiendaPelicula)
-VALUES (4, 5);
+INSERT INTO detalles (id_alquiler, id_tiendaPelicula, copiasPelicula)
+VALUES (4, 5, 3);
 
 
 
